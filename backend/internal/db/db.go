@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"time"
 
 	"github.com/jackc/pgx/v5/pgxpool"
 )
@@ -50,9 +51,19 @@ func InitDB() error {
 		return fmt.Errorf("unable to create connection pool: %w", err)
 	}
 
-	// Test the connection
-	if err := pool.Ping(context.Background()); err != nil {
-		return fmt.Errorf("unable to ping database: %w", err)
+	// Test the connection with retries for docker-compose startup
+	var pingErr error
+	for i := 0; i < 5; i++ {
+		pingErr = pool.Ping(context.Background())
+		if pingErr == nil {
+			break
+		}
+		log.Printf("Database not ready yet, retrying in 2 seconds... (%d/5)", i+1)
+		time.Sleep(2 * time.Second)
+	}
+
+	if pingErr != nil {
+		return fmt.Errorf("unable to ping database after retries: %w", pingErr)
 	}
 
 	Pool = pool
