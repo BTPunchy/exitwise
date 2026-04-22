@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
 
-MapboxGL.setAccessToken('.mock');
+//MapboxGL.setAccessToken('.mock');
 
 const BASE_URL = 'http://localhost:8080';
 const { width } = Dimensions.get('window');
