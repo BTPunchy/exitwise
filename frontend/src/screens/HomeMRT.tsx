@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import MapboxGL from '@rnmapbox/maps';
 
-MapboxGL.setAccessToken('pk.eyJ1IjoiYnRwdW5jaHkiLCJhIjoiY21vOHh1Z21kMDRnczJxcjBqdG5iM2t0YSJ9.3IT3LGblDnR8m9JU5iCt7g');
+MapboxGL.setAccessToken('');
 
 const BASE_URL = 'http://localhost:8080';
 const { width } = Dimensions.get('window');
