@@ -16,6 +16,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.punchie.exitwise",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -30,7 +31,7 @@
       [
         "@rnmapbox/maps",
         {
-          "RNMapboxMapsDownloadToken": "sk.eyJ1IjoibW9jay11c2VyIiwiYSI6Im1vY2stZG93bmxvYWQtdG9rZW4tcGxhY2Vob2xkZXIifQ.mock"
+          "RNMapboxMapsDownloadToken": "pk.eyJ1IjoiYnRwdW5jaHkiLCJhIjoiY21vOHh1Z21kMDRnczJxcjBqdG5iM2t0YSJ9.3IT3LGblDnR8m9JU5iCt7g"
         }
       ],
       [
